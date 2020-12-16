@@ -1,0 +1,533 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://www.jessebett.com/ProbabilisticMLCourse/csc412/assignments/assignment_1/">
+      
+      
+        <meta name="author" content="Jesse Bettencourt">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>CSC412 Winter 2020: Probabilsitic Machine Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#fb8c00">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira:300,400,400i,700|Fira+Code&display=fallback">
+        <style>body,input{font-family:"Fira","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Code","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="orange" data-md-color-accent="orange">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#assignment-1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.jessebett.com/ProbabilisticMLCourse/csc412" title="CSC412 Winter 2020: Probabilsitic Machine Learning" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              CSC412 Winter 2020: Probabilsitic Machine Learning
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Assignment 1
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.jessebett.com/ProbabilisticMLCourse/csc412" title="CSC412 Winter 2020: Probabilsitic Machine Learning" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    CSC412 Winter 2020: Probabilsitic Machine Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Week 1
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Week 1
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/csc412_week_1.pdf" title="Lecture Slides" class="md-nav__link">
+      Lecture Slides
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_1/" title="Past Lecture" class="md-nav__link">
+      Past Lecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/ProbMLCourse/intro-tutorial" title="Intro to Tools" class="md-nav__link">
+      Intro to Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_2/" title="Week 2" class="md-nav__link">
+      Week 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_3/" title="Week 3" class="md-nav__link">
+      Week 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_5/" title="Week 4" class="md-nav__link">
+      Week 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_6/" title="Week 5" class="md-nav__link">
+      Week 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/kl/" title="Week 6" class="md-nav__link">
+      Week 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_10/" title="Week 8" class="md-nav__link">
+      Week 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_8/" title="Week 9" class="md-nav__link">
+      Week 9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_11/" title="Week 10" class="md-nav__link">
+      Week 10
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_12/" title="Week 11" class="md-nav__link">
+      Week 11
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../lectures/week_13/" title="Week 12" class="md-nav__link">
+      Week 12
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sample_tests/sample_midterm/" title="Sample Midterm" class="md-nav__link">
+      Sample Midterm
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#due-1159pm-monday-feb-24" class="md-nav__link">
+    Due: 11:59pm Monday, Feb 24
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submission-instructions" class="md-nav__link">
+    Submission Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collaboration-and-github-private-repository" class="md-nav__link">
+    Collaboration and Github Private Repository
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="assignment-1">Assignment 1<a class="headerlink" href="#assignment-1" title="Permanent link">&para;</a></h1>
+<h4 id="due-1159pm-monday-feb-24">Due: 11:59pm Monday, Feb 24<a class="headerlink" href="#due-1159pm-monday-feb-24" title="Permanent link">&para;</a></h4>
+<p>This is the repository for assignment 1. It contains the following files:</p>
+<ul>
+<li><code class="codehilite"><span class="na">.gitignore</span></code> - tells git to ignore certain kinds of files. This prevents you from submitting the auxiliary files created when producing LaTeX documents.</li>
+<li><code class="codehilite">A1.jmd</code> - the source code used to generate the assignment document, including examples of starter Julia code you may use for your own solutions. Feel free to fill in your answers directly into this file to produce your pdf writeup. Also feel free to try a more traditional workflow by writing your final writeup in a LaTeX <code class="codehilite"><span class="na">.tex</span></code> document, and completing your code in a standard Julia <code class="codehilite"><span class="na">.jl</span></code> file, or translate the starter code into a python <code class="codehilite"><span class="na">.py</span></code>.</li>
+<li><code class="codehilite">A1.pdf</code> - the text of the assignment.</li>
+<li><code class="codehilite">Project.toml</code> - the Julia environment, specifying packages and versions you can use to complete the programming questions. You can activate this environment by opening this project folder, and inside the Julia REPL typing: <code class="codehilite">] activate .</code> and <code class="codehilite">] instantiate</code></li>
+<li><code class="codehilite">README.md</code> - the text you are currently reading.</li>
+<li><code class="codehilite">make_pdf.jl</code> - a short Julia script that contains the code used to produce A1.pdf from A1.jmd.</li>
+</ul>
+<h2 id="submission-instructions">Submission Instructions<a class="headerlink" href="#submission-instructions" title="Permanent link">&para;</a></h2>
+<p>We will be collecting assignments through Github Classroom.</p>
+<p>You will receive a link inviting you to complete the assignment. </p>
+<p>Only the files that you successfully <code class="codehilite">git push</code> to this repo will be assessed.</p>
+<p>Note: If you've already cloned the repo and started the assignment make sure you put your solutions in the repo we've automatically created for you, and that you push your changes to this repo before the due date.</p>
+<h2 id="collaboration-and-github-private-repository">Collaboration and Github Private Repository<a class="headerlink" href="#collaboration-and-github-private-repository" title="Permanent link">&para;</a></h2>
+<p>Keep your solutions to this assignment, including your GitHub repo, private and in accordance with our collaboration and academic integrity policy.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../index.js"></script>
+      
+    
+  </body>
+</html>
